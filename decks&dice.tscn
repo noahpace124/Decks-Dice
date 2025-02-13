@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfy13rn87r6d4"]
+
+[ext_resource type="Script" path="res://scripts/decks&dice.gd" id="1_80nxk"]
+[ext_resource type="Script" path="res://scripts/hand.gd" id="2_u25bt"]
+
+[sub_resource type="Curve" id="Curve_4e4di"]
+_data = [Vector2(0, 0), 0.0, 6.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -6.0, 0.0, 0, 0]
+point_count = 3
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_adh75"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 6.0, 0, 0, Vector2(0.5, 1.49012e-08), 0.0, 0.0, 0, 0, Vector2(1, 1), 6.0, 0.0, 0, 0]
+point_count = 3
+metadata/_snap_enabled = true
+
+[node name="Decks&Dice" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_80nxk")
+
+[node name="Draw" type="Button" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 78.0
+offset_bottom = 39.0
+text = "Draw"
+
+[node name="Discard" type="Button" parent="."]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 14.0
+offset_right = 625.0
+offset_bottom = 45.0
+text = "Discard"
+
+[node name="Hand" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 85.0
+offset_top = 277.0
+offset_right = 548.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 1, 1, 0.290196)
+script = ExtResource("2_u25bt")
+hand_curve = SubResource("Curve_4e4di")
+rotation_curve = SubResource("Curve_adh75")

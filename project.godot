@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Decks&Dice"
-run/main_scene="res://decks&dice.tscn"
+config/name="DecksNDice"
+run/main_scene="res://decksNdice.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

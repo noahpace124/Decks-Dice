@@ -22,7 +22,7 @@ func set_card_values(_name: String, _description: String, _cost: Texture2D):
 	update_graphics()
 	
 func update_graphics():
-	name_label.set_text(card_name)
-	description_label.set_text(card_description)
-	cost_label.texture = card_cost
+	$Name.text = card_name
+	$Description.text = card_description
+	$Cost.texture = card_cost
 	

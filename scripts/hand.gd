@@ -13,8 +13,8 @@ const CARD = preload("res://card.tscn")
 
 func draw() -> void:
 	var new_card = CARD.instantiate()
-	add_child(new_card)
 	new_card.set_card_values("Slash", "3 DMG", load("res://sprites/bonus_sprite.png"))
+	add_child(new_card)
 	_update_cards()
 	
 func discard() -> void:
@@ -29,10 +29,10 @@ func discard() -> void:
 func _update_cards() -> void:
 	var cards := get_child_count()
 	var all_cards_size := Card.SIZE.x * cards + x_sep * (cards - 1)
-	var final_x_sep := x_sep
+	var final_x_sep: float = x_sep
 	
 	if all_cards_size > size.x:
-		final_x_sep = (size.x - CARD.SIZE.x * cards) / (cards - 1)
+		final_x_sep = (size.x - Card.SIZE.x * cards) / (cards - 1)
 		all_cards_size = size.x
 	
 	var offset := (size.x - all_cards_size) / 2
@@ -46,7 +46,7 @@ func _update_cards() -> void:
 			y_multiplier = 0.0
 			rot_multiplier = 0.0
 		
-		var final_x: float = offset + CARD.SIZE.x * i + final_x_sep * i
+		var final_x: float = offset + Card.SIZE.x * i + final_x_sep * i
 		var final_y: float = y_min + y_max * y_multiplier
 		
 		card.position = Vector2(final_x, final_y)

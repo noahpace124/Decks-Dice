@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/hand.gd" id="2_u25bt"]
 
 [sub_resource type="Curve" id="Curve_4e4di"]
-_data = [Vector2(0, 0), 0.0, 3.0, 0, 0, Vector2(0.5, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 6.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -6.0, 0.0, 0, 0]
 point_count = 3
 metadata/_snap_enabled = true
 
@@ -36,22 +36,26 @@ offset_bottom = 45.0
 text = "Discard"
 
 [node name="Hand" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(640, 128)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = 361.0
-offset_right = 640.0
-offset_bottom = 489.0
+offset_left = 85.0
+offset_top = 277.0
+offset_right = 548.0
+offset_bottom = 360.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 color = Color(1, 1, 1, 0.290196)
 script = ExtResource("2_u25bt")
 hand_curve = SubResource("Curve_4e4di")
 rotation_curve = SubResource("Curve_adh75")
-y_min = -100
-y_max = -30
+max_rotation_degrees = null
+x_sep = null
+y_min = null
+y_max = null
 
 [connection signal="pressed" from="Draw" to="." method="_on_draw_pressed"]
 [connection signal="pressed" from="Discard" to="." method="_on_discard_pressed"]
